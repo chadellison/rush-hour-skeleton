@@ -1,13 +1,13 @@
 class PayloadRequest < ActiveRecord::Base
   validates :url, presence: true
+  validates :parameters, presence: true
+  validates :ip, presence: true
   validates :requested_at, presence: true
   validates :responded_in, presence: true
-  validates :refferred_by, presence: true
+  validates :referred_by, presence: true
   validates :request_type, presence: true
-  validates :parameters, presence: true
-  validates :event_name, presence: true
   validates :user_agent, presence: true
   validates :resolution_width, presence: true
   validates :resolution_height, presence: true
-  validates :ip, presence: true
+  validates :event_name, presence: true
 end
