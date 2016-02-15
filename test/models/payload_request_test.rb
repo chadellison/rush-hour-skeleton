@@ -14,4 +14,9 @@ class PayloadRequestTest < Minitest::Test
     assert_equal 5, PayloadRequest.count
     assert_equal 41, PayloadRequest.average_response_time
   end
+
+  def test_max_response_time
+    create_payload(5)
+    assert_equal 45, PayloadRequest.max_response_time
+  end
 end
