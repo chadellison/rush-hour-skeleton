@@ -1,4 +1,5 @@
 class PayloadRequest < ActiveRecord::Base
+  belongs_to :resolution_size
   belongs_to :url
   belongs_to :ip
   belongs_to :user_agent
