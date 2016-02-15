@@ -14,4 +14,5 @@ class PayloadRequest < ActiveRecord::Base
   validates :user_agent_id, presence: true
   validates :resolution_size_id, presence: true
   validates :event_name_id, presence: true
+
 end
