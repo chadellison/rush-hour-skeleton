@@ -12,7 +12,7 @@ class IpTest < Minitest::Test
 
   def test_it_has_the_correct_relationship_with_payload_requests
     Ip.create(address: "1279393")
-    PayloadRequest.create(url_id: 1, requested_at: "10:00", responded_in: "37", referred_by: "social login", request_type: "get", parameters: "params", event_name_id: 23, user_agent_id: 23, resolution_size_id: 40, ip_id: 1)
+    create_payload
     assert_equal 1, Ip.all.last.payload_requests.count
   end
 end

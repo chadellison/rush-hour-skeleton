@@ -13,6 +13,6 @@ class UserAgentTest < Minitest::Test
   def test_it_has_many_payloads
     UserAgent.create(os: "Mac", browser: "Chrome")
     create_payload
-    UserAgent.all.last.payload_requests
+    assert_equal 1, UserAgent.all.first.payload_requests.count
   end
 end
