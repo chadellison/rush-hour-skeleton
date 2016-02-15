@@ -15,4 +15,7 @@ class PayloadRequest < ActiveRecord::Base
   validates :resolution_size_id, presence: true
   validates :event_name_id, presence: true
 
+  def self.average_response_time
+    self.average(:responded_in)
+  end
 end

@@ -8,4 +8,10 @@ class PayloadRequestTest < Minitest::Test
     PayloadRequest.create(url_id: 34)
     assert_equal 1, PayloadRequest.count
   end
+
+  def test_average_response_time
+    create_payload(5)
+    assert_equal 5, PayloadRequest.count
+    assert_equal 41, PayloadRequest.average_response_time
+  end
 end
