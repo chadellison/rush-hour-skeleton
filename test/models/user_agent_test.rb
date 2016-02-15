@@ -9,4 +9,10 @@ class UserAgentTest < Minitest::Test
     UserAgent.create(os: "hp")
     assert_equal 1, UserAgent.count
   end
+
+  def test_it_has_many_payloads
+    UserAgent.create(os: "Mac", browser: "Chrome")
+    create_payload
+    UserAgent.all.last.payload_requests
+  end
 end
